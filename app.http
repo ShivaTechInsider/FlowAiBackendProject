@@ -1,0 +1,91 @@
+### Register a New User
+POST http://localhost:3000/api/register
+Content-Type: application/json
+
+{
+  "username": "shivakrishna",
+  "password": "shivakrishna@123"
+}
+
+### Log In to Receive Access Token
+POST http://localhost:3000/api/login
+Content-Type: application/json
+
+{
+  "username": "testuser",
+  "password": "password123"
+}
+
+### Add a New Category
+POST http://localhost:3000/api/categories
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJzaGl2YWtyaXNobmEiLCJpYXQiOjE3Mjk2MTUzODksImV4cCI6MTcyOTYxODk4OX0.Hj35I2yyyJcap7-6PfO4qeaXjNjTLgy9-aNe3PG8WEU
+
+Content-Type: application/json
+
+{
+  "name": "Food",
+  "type": "expense"
+}
+
+### Get All Categories
+GET http://localhost:3000/api/categories
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJzaGl2YWtyaXNobmEiLCJpYXQiOjE3Mjk2MTUzODksImV4cCI6MTcyOTYxODk4OX0.Hj35I2yyyJcap7-6PfO4qeaXjNjTLgy9-aNe3PG8WEU
+
+### Get Category by ID
+GET http://localhost:3000/api/categories/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJzaGl2YWtyaXNobmEiLCJpYXQiOjE3Mjk2MTUzODksImV4cCI6MTcyOTYxODk4OX0.Hj35I2yyyJcap7-6PfO4qeaXjNjTLgy9-aNe3PG8WEU
+### Update a Category
+PUT http://localhost:3000/api/categories/1
+Authorization: Bearer <your_jwt_token>
+Content-Type: application/json
+
+{
+  "name": "Groceries",
+  "type": "expense"
+}
+
+### Delete a Category
+DELETE http://localhost:3000/api/categories/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJzaGl2YWtyaXNobmEiLCJpYXQiOjE3Mjk2MTUzODksImV4cCI6MTcyOTYxODk4OX0.Hj35I2yyyJcap7-6PfO4qeaXjNjTLgy9-aNe3PG8WEU 
+
+### Add a New Transaction
+POST http://localhost:3000/api/transactions
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJzaGl2YWtyaXNobmEiLCJpYXQiOjE3Mjk2MTUzODksImV4cCI6MTcyOTYxODk4OX0.Hj35I2yyyJcap7-6PfO4qeaXjNjTLgy9-aNe3PG8WEU
+Content-Type: application/json
+
+{
+  "type": "expense",
+  "category_id": 1,
+  "amount": 50.00,
+  "date": "2024-10-22",
+  "description": "Dinner at a restaurant"
+}
+
+### Get All Transactions
+GET http://localhost:3000/api/transactions
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJuZXd1c2VyIiwiaWF0IjoxNzI5NjA0MDg3LCJleHAiOjE3Mjk2MDc2ODd9.KTosNK9s1VZ6wYYs37i7B8AfJrOOUO1cLbUgfo8Sb5s
+
+### Get Transaction by ID
+GET http://localhost:3000/api/transactions/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJuZXd1c2VyIiwiaWF0IjoxNzI5NjA0MDg3LCJleHAiOjE3Mjk2MDc2ODd9.KTosNK9s1VZ6wYYs37i7B8AfJrOOUO1cLbUgfo8Sb5s
+
+### Update a Transaction
+PUT http://localhost:3000/api/transactions/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJuZXd1c2VyIiwiaWF0IjoxNzI5NjA0MDg3LCJleHAiOjE3Mjk2MDc2ODd9.KTosNK9s1VZ6wYYs37i7B8AfJrOOUO1cLbUgfo8Sb5s
+Content-Type: application/json
+
+{
+  "type": "expense",
+  "category_id": 1,
+  "amount": 75.00,
+  "date": "2024-10-22",
+  "description": "Dinner at a new restaurant"
+}
+
+### Delete a Transaction
+DELETE http://localhost:3000/api/transactions/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJuZXd1c2VyIiwiaWF0IjoxNzI5NjA0MDg3LCJleHAiOjE3Mjk2MDc2ODd9.KTosNK9s1VZ6wYYs37i7B8AfJrOOUO1cLbUgfo8Sb5s
+
+### Get Summary of Transactions
+GET http://localhost:3000/api/summary
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJuZXd1c2VyIiwiaWF0IjoxNzI5NjA0MDg3LCJleHAiOjE3Mjk2MDc2ODd9.KTosNK9s1VZ6wYYs37i7B8AfJrOOUO1cLbUgfo8Sb5s
